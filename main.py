@@ -1,14 +1,17 @@
 from PIL import Image
+from image_handler import get_image_dimensions, find_unique_colors, crop_image_by_color
 
-# Open a JPG image file
-image = Image.open("testImage.jpg")
+path_to_image = "TestImages/ps1.png"
 
-# Define the coordinates (x, y) of the pixel you want to check
-x = 100
-y = 50
+target_color = (207, 50, 201)
 
-# Get the RGB values of a pixel at coordinates (x, y)
-pixel_color = image.getpixel((x, y))
+output_path = "CroppedImages/cropped_image.jpg"
 
-print("Pixel color:", pixel_color)
-print("RGB values of pixel at ({}, {}): {}".format(x, y, pixel_color))
+# Get a unique color from the original image
+unique_color = find_unique_colors(path_to_image)
+
+print(unique_color) 
+
+crop_image_by_color(path_to_image, target_color,output_path)
+
+# TODO: Iterate over all pixels and keep track of ones with selected colour then return new image
