@@ -19,7 +19,7 @@ def convolve_image(image_path, kernel):
     original_image = Image.open(image_path)
     
     image = original_image.convert('L')
-
+    
     # gets intensity values
     image_data = list(image.getdata())
 
@@ -74,7 +74,8 @@ def apply_sobel_filter(image_array):
 
     return gradient_magnitude, thresholded_image
 
-image_path = 'edge_detection/test_images/lionps.png'
+#image_path = 'edge_detection/test_images/cameraGuy.png'
+image_path = './test_images/construction_site_1.jpg'
 gradient_magnitude, thresholded_image = apply_sobel_filter(image_path)
 
 Image.fromarray(gradient_magnitude.astype(np.uint8)).save('gradient_magnitude_result.png')
