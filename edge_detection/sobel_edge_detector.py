@@ -69,13 +69,13 @@ def apply_sobel_filter(image_array):
 
     gradient_magnitude = np.sqrt(np.square(gradient_x) + np.square(gradient_y))
 
-    threshold = 50 
+    threshold = 100 
     thresholded_image = Image.fromarray((gradient_magnitude > threshold).astype(np.uint8) * 255)
 
     return gradient_magnitude, thresholded_image
 
 #image_path = 'edge_detection/test_images/cameraGuy.png'
-image_path = './test_images/construction_site_1.jpg'
+image_path = './test_images/gaussian_blur.jpg'
 gradient_magnitude, thresholded_image = apply_sobel_filter(image_path)
 
 Image.fromarray(gradient_magnitude.astype(np.uint8)).save('gradient_magnitude_result.png')
