@@ -1,7 +1,5 @@
 import cv2
-from PIL import Image
 import numpy as np
-import matplotlib.pyplot as plt
 
 image_input_path = './high_vis_recognition/pre_processed_images/gaussian_blur.jpg'
 image_output_path_base = './high_vis_recognition/roi_images/'
@@ -35,7 +33,7 @@ def colour_based_segmentation(image_array):
 
     return segmented_image
 
-def get_contours(segmented_image, min_contour_area=150):
+def get_contours(segmented_image, min_contour_area=75):
     # Find contours in the binary image
     contours, _ = cv2.findContours(cv2.cvtColor(segmented_image, cv2.COLOR_BGR2GRAY), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
