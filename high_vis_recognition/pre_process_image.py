@@ -42,9 +42,11 @@ def apply_blur(image_array, kernel):
 
 def preprocess_image(image_input_path, target_width, target_height):
 
-    image_array = image_path_to_numpy_array(image_input_path)
+    #image_array = image_path_to_numpy_array(image_input_path)
 
-    resized_image = resize_image(image_array, target_width, target_height)
+    #resized_image = resize_image(image_array, target_width, target_height)
+
+    resized_image = resize_image(image_input_path, target_width, target_height)
 
     blurred_image = apply_blur(resized_image, gaussian_blur_kernel_5x5)
 
