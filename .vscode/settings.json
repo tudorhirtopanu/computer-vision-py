@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./high_vis_recognition"
+    ]
+}

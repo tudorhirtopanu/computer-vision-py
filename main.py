@@ -3,7 +3,7 @@ import numpy as np
 from high_vis_recognition.pre_process_image import preprocess_image
 from high_vis_recognition.identify_roi import identify_roi, return_edges
 
-input_image_path = "test_images/parking_warden_1.jpg"
+input_image_path = "test_images/high_vis_test.jpeg"
 target_width = 300
 target_height = 300
 
